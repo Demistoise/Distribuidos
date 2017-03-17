@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -20,8 +19,7 @@ public class Propiedad {
 	private int telefono;
 	
 	@ManyToOne
-	@JoinColumn(name = "cif")
-	private Comunidad pertenecea;
+	private String pertenecea;
 	
 	private int planta;
 	private String letra;
@@ -85,12 +83,7 @@ public class Propiedad {
 		this.dni = dni;
 	}
 	
-	public Comunidad getPertenecea() {
-		return pertenecea;
-	}
-	public void setPertenecea(Comunidad pertenecea) {
-		this.pertenecea = pertenecea;
-	}
+	
 	
 
 	
@@ -98,6 +91,12 @@ public class Propiedad {
 	public String toString() {
 		return "Propiedad [Nombre=" + nombre + ", Apellidos=" + apellidos + ", DNI=" + dni + ", Direccion="
 				+ direccion + ", Telefono=" + telefono + ", Pertenece a=" + pertenecea + ", Planta=" + planta + ", Letra=" + letra + ", Porcentaje=" + porcentaje + ", Numero de Cuenta=" + numcuentabancaria + "]";
+	}
+	public void setPertenecea(String pertenecea) {
+		this.pertenecea = pertenecea;
+	}
+	public String getPertenecea() {
+		return pertenecea;
 	}
 	
 	

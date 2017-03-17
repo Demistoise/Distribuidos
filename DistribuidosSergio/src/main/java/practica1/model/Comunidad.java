@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 
@@ -13,8 +14,8 @@ import javax.persistence.OneToMany;
 public class Comunidad {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@OneToMany(mappedBy = "pertenecea")
-	private List<Propiedad> cif;
+	@OneToMany
+	private String cif;
 	
 	private  int codigopostal;
 	private String poblacion;
@@ -22,7 +23,18 @@ public class Comunidad {
 	private String calle;
 	private int numero;
 	
-
+	@JoinColumn(name = "dni")
+	private List<Propiedad> lispro;
+	
+	public Comunidad(String cif, int codigopostal, String poblacion, int cuentabancaria, String calle, int numero){
+		setCif(cif);
+		setCodigopostal(codigopostal);
+		setPoblacion(poblacion);
+		setCuentabancaria(cuentabancaria);
+		setCalle(calle);
+		setNumero(numero);
+	}
+	
 
 	public String getPoblacion() {
 		return poblacion;
@@ -49,12 +61,6 @@ public class Comunidad {
 		this.numero = numero;
 	}
 	
-	public List<Propiedad> getCif() {
-		return cif;
-	}
-	public void setCif(List<Propiedad> cif) {
-		this.cif = cif;
-	}
 	
 	public int getCodigopostal() {
 		return codigopostal;
@@ -67,6 +73,26 @@ public class Comunidad {
 	public String toString() {
 		return "Comunidad [cif=" + cif + ", CP=" + codigopostal + ", Poblacion=" + poblacion + ", Cuenta Bancaria="
 				+ cuentabancaria + ", Calle=" + calle + ", Numero=" + numero + "]";
+	}
+
+
+	public String getCif() {
+		return cif;
+	}
+
+
+	public void setCif(String cif) {
+		this.cif = cif;
+	}
+
+
+	public List<Propiedad> getLispro() {
+		return lispro;
+	}
+
+
+	public void setLispro(List<Propiedad> lispro) {
+		this.lispro = lispro;
 	}
 	
 	

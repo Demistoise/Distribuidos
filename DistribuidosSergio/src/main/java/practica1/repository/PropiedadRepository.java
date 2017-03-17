@@ -10,11 +10,11 @@ import practica1.model.Propiedad;
 public interface PropiedadRepository extends JpaRepository<Propiedad, Long> {
 	Propiedad findByNombre (String nombre);
 	Propiedad findByApellidos (String apellidos);
-	Propiedad findByPertenecea (Comunidad pertenecea);
+	Propiedad findByPertenecea (String pertenecea);
 	Propiedad findByPlanta (int num);
 	Propiedad findByLetra (String letra);
 	Propiedad findByPorcentaje (int porcentaje);
 	Propiedad findByNumcuentabancaria (int numcuentabancaria);
 	
-	List<Propiedad> findByPerteneceaAndPlanta(Comunidad pertenecea, int num);
+	//List<Propiedad> findByPerteneceaAndPlanta(Comunidad pertenecea, int num);
 }
