@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>ADMINISTRADOR DE FINCAS</title>
+</head>
+<body>
+	<h1>CONSULTA</h1>
+	<br></br>
+	<form action="/busquedaportal">
+		<table>
+			<tr>
+				<td>Portal:</td>
+				<td><input type="number" name="por" /></td>
+				<td><input type="submit" value="Realizar Consulta" /></td>
+			</tr>
+		</table>
+	</form>
+	<form action="/busquedaportalplanta">
+		<table>
+			<tr>
+				<td>Portal:</td>
+				<td><input type="number" name="por2" /></td>
+				<td>Planta:</td>
+				<td><input type="number" name="planta" /></td>
+				<td><input type="submit" value="Realizar Consulta" /></td>
+			</tr>
+		</table>
+	</form>
+	<form action="/busquedaapellidos">
+		<table>
+			<tr>
+				<td>Apellidos:</td>
+				<td><input type="text" name="apellidos" /></td>
+				<td><input type="submit" value="Realizar Consulta" /></td>
+			</tr>
+		</table>
+	</form>
+	<form action="/busquedadni">
+		<table>
+			<tr>
+				<td>DNI:</td>
+				<td><input type="text" name="dni" /></td>
+				<td><input type="submit" value="Realizar Consulta" /></td>
+			</tr>
+		</table>
+	</form>
+	<form action="/busquedapertenece">
+		<table>
+			<tr>
+				<td>Pertenece a:</td>
+				<td><input type="text" name="pertenecea" /></td>
+				<td><input type="submit" value="Realizar Consulta" /></td>
+			</tr>
+		</table>
+	</form>
+	<br></br>
+	<br></br>
+			
+
+	
+	
+	<table>
+	<tr>
+		<td>NOMBRE</td>
+		<td>APELLIDOS</td>
+		<td>DNI</td>
+		<td>DIRECCION</td>
+		<td>TELEFONO</td>
+		<td>PERTENECE A</td>
+		<td>PORTAL</td>
+		<td>PLANTA</td>
+		<td>LETRA</td>
+		<td>PORCENTAJE</td>
+		<td>CUENTA BANCARIA</td>
+	</tr>
+	<tr th:each="portal : ${portal}">
+		<td>
+			<span th:text="${portal.nombre}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.apellidos}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.dni}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.direccion}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.telefono}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.pertenecea}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.portal}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.planta}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.letra}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.porcentaje}"></span>
+		</td>
+		<td>
+			<span th:text="${portal.numcuentabancaria}"></span>
+		</td>
+		<td>
+			<form action="/eliminar">
+				<input  type="submit" value="Eliminar" />
+			</form>
+
+		</td>
+		<td>
+			<form action="/modificar">
+				<input  type="submit" value="Modificar" />
+			</form>
+		</td>
+	
+	</tr>
+	
+	
+	</table>
+		
+		
+	
+
+</body>
+</html>

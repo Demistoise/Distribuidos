@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>ADMINISTRADOR DE FINCAS</title>
+</head>
+<body>
+	<h1>Añadir comunidad</h1>
+	<br></br>
+	<br></br>
+	<form action="/insertarComunidad" method="post">
+		<label>CIF: </label>
+		<input type="text" name="cif" /><br></br><br></br>
+		<label>Poblacion: </label>
+		<input type="text" name="poblacion" /><br></br><br></br>
+		<label>Codigo postal: </label>
+		<input type="number" name="codigopostal" /><br></br><br></br>
+		<label>Numero cuenta bancaria: </label>
+		<input type="number" name="cuentabancaria" /><br></br><br></br>
+		<label>Calle: </label>
+		<input type="text" name="calle" /><br></br><br></br>
+		<label>Numero: </label>
+		<input type="number" name="numero" /><br></br><br></br>
+		<input type="submit" name="anadircomunidad" value="Enviar" />
+	</form>
+</body>
+</html>
