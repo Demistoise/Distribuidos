@@ -1,0 +1,362 @@
+
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+#map {
+  width:400px;
+  height:250px;
+  margin-top: -10px;
+  margin-bottom: 35px;
+  display: none;
+  border-radius: 2%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #1E1E1E !important;
+}
+
+.ca-menu{
+    padding: 0 0 0 48px;
+    margin: 20px auto;
+    width: 100%;
+}
+.ca-menu li{
+    width: 230px;
+    height: 230px;
+    border: 9px solid #B6B6B6;
+    overflow: hidden;
+    position: relative;
+    float:left;
+    background: #fff;
+    margin-left:-48px;
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    -webkit-border-radius: 125px;
+    -moz-border-radius: 125px;
+    border-radius: 125px;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.ca-menu li:last-child{
+    margin-right: 0px;
+}
+.ca-menu li a{
+    text-align: left;
+    width: 100%;
+    height: 100%;
+
+    color: #333;
+}
+.ca-icon{
+    font-family: 'WebSymbolsRegular', cursive;
+    font-size: 15px;
+    color: #D4D4D4;
+    line-height: 60px;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.ca-main{
+    font-size: 9px;
+    position: absolute;
+    top: 38%;
+    height: 80px;
+    width: 170px;
+    left: 50%;
+    margin-left: -85px;
+    opacity: 0.8;
+    text-align: center;
+    color: #383838;
+    font-weight: bold;
+}
+.ca-sub{
+    display: none;
+}
+.ca-menu li:hover{
+    border-color: #1E1E1E;
+    z-index: 999;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.ca-menu li:hover .ca-icon{
+    color: #1E1E1E;
+    font-size: 19px;
+    text-shadow: 0px 0px 1px #1E1E1E;
+    -webkit-animation: moveFromBottom 300ms ease;
+    -moz-animation: moveFromBottom 400ms ease;
+}
+.ca-menu li:hover .ca-main{
+    color: #1E1E1E;
+    -webkit-animation: moveFromBottom 500ms ease;
+    -moz-animation: moveFromBottom 500ms ease;
+    -ms-animation: moveFromBottom 500ms ease;
+}
+
+@-webkit-keyframes moveFromBottom {
+    from {
+        -webkit-transform: translateY(200%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform: translateY(200%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        -moz-transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+@-ms-keyframes moveFromBottom {
+    from {
+        -ms-transform: translateY(200%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        -ms-transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+
+.menu-item {
+  width: 90px !important;
+  height: 90px !important;
+  margin-left: 5px !important;
+}
+#fila-menu {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  -webkit-transition: margin-top;
+}
+
+a li:hover {
+  cursor: pointer;
+}
+
+#boton-enviar {
+  display: none;
+  margin-top: -40px;
+  background-color: #26A69A;
+  border-color: #26A69A;
+}
+
+.col-menu-button {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+.menu-form {
+  display: none;
+}
+
+.menos-altura {
+  margin-top: -25px !important;
+}
+
+#row-menu {
+  background-color: #546E7A;
+  -webkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+
+.vertical-center {
+
+  /* Make it a flex container */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: inline-flex;
+  margin-top: 5%;
+
+  /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+  -webkit-align-items : center;
+       -moz-box-align : center;
+       -ms-flex-align : center;
+          align-items : center;
+
+  /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+
+     Therefore, we should use the following declarations to get it centered again */
+         -webkit-box-pack : center;
+            -moz-box-pack : center;
+            -ms-flex-pack : center;
+  -webkit-justify-content : center;
+          justify-content : center;
+}
+
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+#header {
+}
+#content {
+	padding-bottom:100px;   /* Height of the footer element */
+}
+
+#footer {
+	width:100%;
+	min-height:50px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background-color: #1E1E1E;
+    -webkit-box-shadow: 0 -6px 6px -6px #101216;
+    -moz-box-shadow: 0 -6px 6px -6px #101216;
+    box-shadow: 0 -6px 6px -6px #101216;
+    border-color: #4D515A;
+}
+
+.footer-text {
+	color: rgb(152, 152, 152);
+	margin-top: 15px;
+}
+
+.pullea-right {
+	float: right;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.bottom-space {
+	margin-bottom: 30px !important;
+}
+
+.btn-no-margins{
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.min-height-fixed {
+	min-height: 261.75px;
+}
+
+.icon-github {
+	color: #989898;
+	font-size: 22px !important;
+	margin-right: 20px;
+}
+
+.form-control-wrapper.menu-form{
+  width: 78%;
+}
+
+@media (max-width: 768px) {
+    .footer-text {
+        float: none !important;
+    }
+
+    .icon-github {
+    	float: right;
+    }
+}
+
+@media screen and (min-width: 992px){
+   .search-fields {
+      margin-top: 60px !important;
+   }
+}
+
+@media screen and (max-width: 991px){
+   .form-control-wrapper.menu-form{
+     width: auto;
+   }
+}
+
+
+.small-size {
+  font-size: 8px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.ui.label.filter-tag {
+  display: none;
+}
+
+#fila-filtros {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.display-inline-tag {
+  display: inline-block !important;
+}
+
+.reset-form-button {
+  font-size: 14px;
+  cursor: pointer;
+  float: right;
+  margin-top: 4px;
+}
+
+.control-label {
+  /*width: 100%;*/
+}
+
+.no-lateral-padings {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#fecha-captura-form{
+  margin-bottom: 15px;
+}
+
+#fecha-subida-form{
+  margin-bottom: 15px;
+}
+
+.tag-icon {
+  font-size: 1.7em;
+  margin-right: 5px;
+}
+
+.add-right-margin {
+  margin-right: 15px;
+}
+
+#numResultadosTag {
+  float: left;
+  margin-left: 9%;
+  display: none;
+}
+
+#numResultadosTagText {
+  display: none;
+}
