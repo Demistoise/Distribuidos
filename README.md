@@ -7,7 +7,10 @@ Asier Ruano Peñas <p>
 <p> <p>
 Material necesario https://spring.io/tools <p>
 Tutorial Spring STS http://www.uv.es/grimo/teaching/SpringMVCv3PasoAPaso/part1.html <p>
-Tutorial BDD H2 http://albertovilches.com/tutorial-h2-database
+<b> </b>
+Flickr
+Clave: 09129ae79417a6f6ab97dcdb75100438
+Secreto: 77e7fb16eb57d70e
 
 
 
