@@ -45,8 +45,8 @@ function menuFunc(e) {
             $('#fecha-subida-form').show(300);
             break;
         case 'views-button':
-            query_type = '#views-form';
-            $('#views-form').show(300);
+            query_type = '#titulo-form';
+            $('#titulo-form').show(300);
             break;
         default:
     }

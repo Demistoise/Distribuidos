@@ -2,6 +2,7 @@
 
 $(function(){
   getPhotos();
+    getFav();
 });
 
 function addLoadEvent(func) {
@@ -70,10 +71,8 @@ function getImages() {
       break;
 
     // BUSQUEDA POR NUMERO DE VISITAS
-    case '#views-form':
-      filtros.extras = "views";
-      minViews = value;
-      console.log("Visitas " + value);
+    case '#views-form':      
+      getFav();
       break;
 
     // BUSQUEDA POR FECHA DE SUBIDA
@@ -98,6 +97,7 @@ function getImages() {
 
   // Cargamos los filtros en la petición
   getPhotos();
+    getFav();
   checkFilters();
 }
 
@@ -164,7 +164,62 @@ function getPhotos() {
     });
 }
 
+
+function getFav() {
+              
+              $('#numResultadosTagText').css('display', 'none');
+              var numImagenes = 0;
+
+              url = "https://api.flickr.com/services/rest/?method=flickr.favorites.getList&api_key=" + api_key + "&format=json&nojsoncallback=1";
+
+              $.getJSON(url, filtros,
+                function(fa) {
+                  console.log(fa);
+                  console.log(url);
+                  /*$.each(fa.photos.photo, function(i, photo) {
+
+                    var msg = photo.title.substr(0, 1).toUpperCase() + photo.title.substr(1);                    
+
+
+                    var url_img = "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_h.jpg";
+
+                    var size = "800 x 800";
+
+                    var html = getHtmlFav(url_img, size, msg);
+
+                    if(!filtros.extras || parseInt(photo.views) >= minViews){
+                      numImagenes++;
+                      $(".grid").append(html);
+                    }
+                  });*/
+                  // Una vez cargadas todas las fotos, se añaden animaciones
+                  // Funcion del archivo library/js/animations.js
+                  //var html = getHtmlFav(url_img, size);
+                  var html = getHtml(url_img, size)
+                  setAnimation();
+                  $('#numResultadosTagText').text(numImagenes);
+                  $('#numResultadosTagText').css('display', 'inline-block');
+                });
+            }
 // Funcion para obtener el HTML que se inyectará
+
+/*function getHtmlFav(url_img, size) {
+  var html = '<div class="grid__item" data-size="';
+  html += size;
+  html += '">';
+  html += '<a href="';
+  html += url_img;
+  html += '" class="img-wrap image"><img class="imagen-flickr" src="';
+  html += url_img;
+  html += '" alt="img04" />';
+  html += '<div class="description description--grid">';
+  //html += "Título = "+msg+"  Descripción = ";    
+ // html += valor +"  Album = "+ album +"  Grupo = " +grupo;
+  html += '</div>';  
+  html += '</a>';
+  html += '</div>';
+  return html;
+}*/
 
 function getHtml(url_img, size, msg, valor,album,grupo) {
   var html = '<div class="grid__item" data-size="';
@@ -184,6 +239,9 @@ function getHtml(url_img, size, msg, valor,album,grupo) {
   return html;
 }
 
+
+            
+            
 
 //Funcion que muestra o esconde las etiquetas de las busquedas
 function checkFilters() {
