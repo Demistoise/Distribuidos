@@ -10,6 +10,7 @@ Tutorial Spring STS http://www.uv.es/grimo/teaching/SpringMVCv3PasoAPaso/part1.h
 <p>
 Flickr <p>
 Clave: 09129ae79417a6f6ab97dcdb75100438 <p>
+User ID: 149363336@N03 <p>
 Secreto: 77e7fb16eb57d70e
 
 
